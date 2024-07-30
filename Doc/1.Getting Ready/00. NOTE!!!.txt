@@ -1,0 +1,5 @@
+NOTE:
+
+If you purchased without Raspberry Pi version, you need to download the robot system image to the Raspberry Pi before operating the robot!
+
+To access system image, please provide your order number to support@hiwonder.com
