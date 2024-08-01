@@ -14,7 +14,6 @@ from ArmIK.Transform import *
 from ArmIK.ArmMoveIK import *
 import HiwonderSDK.mecanum as mecanum
 
-# 超声波避障
 
 chassis = mecanum.MecanumChassis()
 AK = ArmIK()
@@ -33,16 +32,13 @@ __isRunning = False
 __until = 0
 
 
-# 夹持器夹取时闭合的角度
 servo1 = 1500
 
-# 初始位置
 def initMove():
     chassis.set_velocity(0,0,0)
     Board.setPWMServoPulse(1, servo1, 300)
     AK.setPitchRangeMoving((0, 6, 18), 0,-90, 90, 1500)
 
-# 变量重置
 def reset():
     global __isRunning
     global Threshold
@@ -60,7 +56,6 @@ def reset():
     stopMotor = True
     __isRunning = False
 
-# app初始化调用
 def init():
     initMove()
     reset()
@@ -168,7 +163,7 @@ def run(img):
     else:
         if stopMotor:
             stopMotor = False
-            chassis.set_velocity(0,0,0)  # 关闭所有电机
+            chassis.set_velocity(0,0,0)
         wait = True
         forward = True
         time.sleep(0.03)
@@ -176,13 +171,12 @@ def run(img):
     return cv2.putText(img, "Dist:%.1fcm"%distance, (30, 480-30), cv2.FONT_HERSHEY_SIMPLEX, 1.2, TextColor, 2)  # 把超声波测距值打印在画面上
 
 
-#关闭前处理
 def Stop(signum, frame):
     global __isRunning
 
     __isRunning = False
-    print('关闭中...')
-    chassis.set_velocity(0,0,0)  # 关闭所有电机
+    chassis.set_velocity(0,0,0)
+
 
 if __name__ == '__main__':
     init()

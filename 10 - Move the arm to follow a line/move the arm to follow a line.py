@@ -49,7 +49,7 @@ def getAreaMaxContour(contours):
     contour_area_temp = 0
     contour_area_max = 0
     areaMaxContour = None
-    for c in contours:  # 历遍所有轮廓
+    for c in contours:
         contour_area_temp = math.fabs(cv2.contourArea(c))
         if contour_area_temp > contour_area_max:
             contour_area_max = contour_area_temp

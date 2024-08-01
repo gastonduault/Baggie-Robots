@@ -67,7 +67,6 @@ def setBuzzer(timer):
     Board.setBuzzer(0)
 
 
-#设置扩展板的RGB灯颜色使其跟要追踪的颜色一致
 def set_rgb(color):
     if color == "red":
         Board.RGB.setPixelColor(0, Board.PixelColor(255, 0, 0))
@@ -83,7 +82,6 @@ detect_color = 'None'
 start_pick_up = False
 start_count_t1 = True
 
-# 变量重置
 def reset():
     global _stop
     global count
@@ -101,7 +99,6 @@ def reset():
     start_pick_up = False
     start_count_t1 = True
 
-# app初始化调用
 def init():
     print("ColorDetect Init")
     load_config()

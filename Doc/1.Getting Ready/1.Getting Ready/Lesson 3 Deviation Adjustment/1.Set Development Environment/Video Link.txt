@@ -1,5 +1,0 @@
-MasterPi Tutorial--VNC Installation and Device Connection
-https://youtu.be/LJAdBS2QWag
-
-MasterPi Tutorial--Remote Desktop Login
-https://youtu.be/3lykgIYc0aw
